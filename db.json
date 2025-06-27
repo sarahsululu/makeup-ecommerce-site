@@ -1,0 +1,121 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Powder Matte Finish",
+      "price": 20.00,
+      "category": "Face",
+      "image": "images/powder.jpeg",
+      "description": "Smooth matte powder for an even, long-lasting finish.",
+      "rating": 4
+    },
+    {
+      "id": 2,
+      "name": "Powder Glow Set – 2",
+      "price": 22.00,
+      "category": "Face",
+      "image": "images/powder2.jpeg",
+      "description": "Glowing powder finish with light shimmer for radiance.",
+      "rating": 5
+    },
+    {
+      "id": 3,
+      "name": "False Eyelashes",
+      "price": 15.00,
+      "category": "Eyes",
+      "image": "images/eyelashes.jpeg",
+      "description": "Soft, reusable lashes to enhance your natural eyes.",
+      "rating": 4
+    },
+    {
+      "id": 4,
+      "name": "Eyeliners Set",
+      "price": 18.00,
+      "category": "Eyes",
+      "image": "images/eyeliners.jpeg",
+      "description": "Waterproof eyeliners for bold, smudge-free definition.",
+      "rating": 5
+    },
+    {
+      "id": 5,
+      "name": "Blush Stick – Shade 1",
+      "price": 17.00,
+      "category": "Face",
+      "image": "images/blushstick1.jpeg",
+      "description": "Creamy blush stick for a smooth, rosy finish.",
+      "rating": 4
+    },
+    {
+      "id": 6,
+      "name": "Sharp Eyeliner Pen",
+      "price": 12.00,
+      "category": "Eyes",
+      "image": "images/sharpeyeliner.jpeg",
+      "description": "Precision felt tip eyeliner for sharp winged looks.",
+      "rating": 4
+    },
+    {
+      "id": 7,
+      "name": "Shed Foundation",
+      "price": 28.00,
+      "category": "Face",
+      "image": "images/shedfoundation.jpeg",
+      "description": "Full coverage foundation with skin-matching shades.",
+      "rating": 5
+    },
+    {
+      "id": 8,
+      "name": "Black Mascara",
+      "price": 16.00,
+      "category": "Eyes",
+      "image": "images/mascara.jpg",
+      "description": "Volumizing mascara for thick, bold lashes.",
+      "rating": 5
+    },
+    {
+      "id": 9,
+      "name": "Blush Palette",
+      "price": 19.00,
+      "category": "Face",
+      "image": "images/blush.jpeg",
+      "description": "Blendable blush palette with warm and cool tones.",
+      "rating": 4
+    },
+    {
+      "id": 10,
+      "name": "Makeup Sponge Set",
+      "price": 10.00,
+      "category": "Tools",
+      "image": "images/sponge.jpeg",
+      "description": "Soft sponges perfect for blending foundation & concealer.",
+      "rating": 4
+    },
+    {
+      "id": 11,
+      "name": "Classic Red Lipstick",
+      "price": 20.00,
+      "category": "Lips",
+      "image": "images/redlipstick.jpeg",
+      "description": "Bold red lipstick with a creamy satin finish.",
+      "rating": 5
+    },
+    {
+      "id": 12,
+      "name": "Smoky Eyeshadow Palette",
+      "price": 25.00,
+      "category": "Eyes",
+      "image": "images/eyeshadow.jpeg",
+      "description": "Pigmented shades for day and night smoky eyes.",
+      "rating": 5
+    },
+    {
+      "id": 13,
+      "name": "Pink Glossy Lipstick",
+      "price": 18.00,
+      "category": "Lips",
+      "image": "images/pinklipstick.jpeg",
+      "description": "Moisturizing lipstick with a glossy pink finish.",
+      "rating": 4
+    }
+  ]
+}
