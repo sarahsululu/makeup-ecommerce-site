@@ -11,7 +11,13 @@
     <header class="hero">
         <h1>Welcome to Makeup-Ecommerce-Site</h1>
         <p>Your one-stop shop for all your makeup needs!</p>
-        <nav>
+        <div class="announcement-banner">
+      Free shipping on orders $30+ & free gift on orders $70 🎁
+    </div>
+    </header>
+           <nav>
+            <button id="toggle-dark-mode">🌙 Toggle Dark Mode</button>
+            
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="products.html">Products</a></li>
@@ -19,14 +25,31 @@
                 <li><a href="about.html">About Us</a></li>
             </ul>
         </nav>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search for products..." />
+            <button id="search-button">Search</button>
+        </div>
+        <img src="images/makeup2 logo.jpg" alt="Makeup Products" class="hero-image" />
         <section id="products">
             <h2>Featured Products</h2>
             <div id="product-list" class="product-list">
                 <!-- Products will be dynamically loaded here -->
             </div>
         </section>
-
-        <div id="mc_embed_shell">
+            <div id="product-detail-modal" class="modal hidden">
+                <div class="modal-content">
+                    <span id="close-modal" class="close">&times;</span>
+                    <img id="detail-image" src="" alt="" />
+                    <h3 id="detail-name"></h3>
+                    <p id="detail-description"></p>
+                    <p><strong>Price:</strong> $<span id="detail-price"></span></p>
+                    <div class="modal-buttons">
+                        <button id="detail-add-to-cart">Add to Cart</button>
+                        <button id="detail-order-now">Order Now</button>
+                    </div>
+                </div>
+            </div>
+            <div id="mc_embed_shell">
       <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
   <style type="text/css">
         
@@ -62,7 +85,6 @@
 
         <script src="src/index.js"></script>
 
-    </header>
     
 </body>
 </html>
