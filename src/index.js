@@ -3,11 +3,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const cartCount = document.getElementById('cart-count');
   const toggleBtn = document.getElementById('toggle-dark-mode');
   const body = document.body;
+  const searchInput = document.getElementById('search-input');
+  const searchButton = document.getElementById('search-button');
 
-  // Start in dark mode by default
-  body.classList.add('dark-mode');
-  if (localStorage.getItem('dark-mode') === 'off') {
-    body.classList.remove('dark-mode');
+  // Light mode is default — enable dark mode if saved
+  if (localStorage.getItem('dark-mode') === 'on') {
+    body.classList.add('dark-mode');
   }
 
   toggleBtn.addEventListener('click', () => {
@@ -16,10 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem('dark-mode', isDark ? 'on' : 'off');
   });
 
-  loadProducts();
-  updateCartCount();
-
   let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  updateCartCount();
 
   function updateCartCount() {
     if (cartCount) cartCount.textContent = cart.length;
@@ -29,41 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     cart.push(product);
     localStorage.setItem('cart', JSON.stringify(cart));
     updateCartCount();
-  }
-
-  function renderProducts(products) {
-    productList.innerHTML = '';
-    products.forEach(product => {
-      const productItem = document.createElement('div');
-      productItem.className = 'product-item';
-      productItem.innerHTML = `
-        <img src="${product.image}" alt="${product.name}">
-        <h3>${product.name}</h3>
-        <p>${product.description || ''}</p>
-        <p>$${product.price.toFixed(2)}</p>
-        <div class="product-buttons">
-          <button onclick='addToCart(${JSON.stringify(product)})'>Add to Cart</button>
-          <button onclick='orderNow(${JSON.stringify(product)})'>Order Now</button>
-        </div>
-      `;
-      productItem.addEventListener('click', () => {
-        showProductDetails(product);
-      });
-      productList.appendChild(productItem);
-    });
-  }
-
-  function loadProducts() {
-    fetch("http://localhost:3000/products")
-      .then(response => {
-        if (!response.ok) throw new Error("Failed to fetch products");
-        return response.json();
-      })
-      .then(products => renderProducts(products))
-      .catch(error => {
-        console.error("Error loading products:", error);
-        productList.innerHTML = "<p style='color: red;'>Failed to load products. Please start JSON Server.</p>";
-      });
+    alert(`Added "${product.name}" to cart!`);
   }
 
   function orderNow(product) {
@@ -88,31 +53,74 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('close-modal').addEventListener('click', () => {
     document.getElementById('product-detail-modal').classList.add('hidden');
   });
-});
 
-document.addEventListener('DOMContentLoaded', () => {
-  const toggleBtn = document.getElementById('toggle-dark-mode');
-  const body = document.body;
+  function renderProducts(products) {
+    productList.innerHTML = '';
+    products.forEach(product => {
+      const productItem = document.createElement('div');
+      productItem.className = 'product-item';
+      productItem.innerHTML = `
+        <img src="${product.image}" alt="${product.name}">
+        <h3>${product.name}</h3>
+        <p>${product.description || ''}</p>
+        <p>$${product.price.toFixed(2)}</p>
+        <div class="product-buttons">
+          <button class="add-to-cart">Add to Cart</button>
+          <button class="order-now">Order Now</button>
+        </div>
+      `;
 
-  // Always start in dark mode by default
-  body.classList.add('dark-mode');
+      // Event listeners for buttons
+      productItem.querySelector('.add-to-cart').addEventListener('click', (e) => {
+        e.stopPropagation();
+        addToCart(product);
+      });
 
-  // If user turned off dark mode earlier, respect that
-  if (localStorage.getItem('dark-mode') === 'off') {
-    body.classList.remove('dark-mode');
-  }
+      productItem.querySelector('.order-now').addEventListener('click', (e) => {
+        e.stopPropagation();
+        orderNow(product);
+      });
 
-  // Handle toggle button click
-  if (toggleBtn) {
-    toggleBtn.addEventListener('click', () => {
-      body.classList.toggle('dark-mode');
-      const isDark = body.classList.contains('dark-mode');
-      localStorage.setItem('dark-mode', isDark ? 'on' : 'off');
+      // Click whole item to show modal
+      productItem.addEventListener('click', () => {
+        showProductDetails(product);
+      });
+
+      productList.appendChild(productItem);
     });
-  } else {
-    console.warn("Dark mode toggle button not found.");
   }
+
+  function loadProducts() {
+    fetch("http://localhost:3000/products")
+      .then(response => {
+        if (!response.ok) throw new Error("Failed to fetch products");
+        return response.json();
+      })
+      .then(products => {
+        renderProducts(products);
+
+        // Optional: Add search functionality
+        searchButton.addEventListener('click', () => {
+          const query = searchInput.value.toLowerCase();
+          const filtered = products.filter(product =>
+            product.name.toLowerCase().includes(query) ||
+            (product.description && product.description.toLowerCase().includes(query))
+          );
+          renderProducts(filtered);
+        });
+      })
+      .catch(error => {
+        console.error("Error loading products:", error);
+        productList.innerHTML = "<p style='color: red;'>Failed to load products. Please start JSON Server.</p>";
+      });
+  }
+
+  // Load everything
+  loadProducts();
 });
+
+
+
 
 
 

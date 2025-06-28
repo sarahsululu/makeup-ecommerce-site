@@ -1,3 +1,4 @@
+/* General Reset */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -260,7 +261,7 @@ header h1 {
 }
 
 .product-buttons button {
-  flex: 1;
+  flex: 1rem;
   padding: 8px;
   border: none;
   border-radius: 25px;
@@ -533,12 +534,8 @@ body.dark-mode button {
   footer {
     margin-top: 2rem;
   }
+
+    .testimonial-card {
+        max-width: 90%;
+    }   
 }
-
-
-
-
-
-
-
-
