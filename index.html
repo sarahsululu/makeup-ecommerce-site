@@ -12,79 +12,129 @@
         <h1>Welcome to Makeup-Ecommerce-Site</h1>
         <p>Your one-stop shop for all your makeup needs!</p>
         <div class="announcement-banner">
-      Free shipping on orders $30+ & free gift on orders $70 🎁
-    </div>
+            Free shipping on orders $30+ & free gift on orders $70 🎁
+        </div>
     </header>
-           <nav>
-            <button id="toggle-dark-mode">🌙 Toggle Dark Mode</button>
-            
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-                <li><a href="about.html">About Us</a></li>
-            </ul>
-        </nav>
-        <div class="search-bar">
-            <input type="text" id="search-input" placeholder="Search for products..." />
-            <button id="search-button">Search</button>
+
+    <nav>
+        <button id="toggle-dark-mode">🌙 Toggle Dark Mode</button>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="about.html">About Us</a></li>
+        </ul>
+    </nav>
+
+    <div class="search-bar">
+        <input type="text" id="search-input" placeholder="Search for products..." />
+        <button id="search-button">Search</button>
+    </div>
+
+    <img src="images/makeup2 logo.jpg" alt="Makeup Products" class="hero-image" />
+
+    <section id="products">
+        <h2>Featured Products</h2>
+        <div id="product-list" class="product-list">
+            <!-- Products will be dynamically loaded here -->
         </div>
-        <img src="images/makeup2 logo.jpg" alt="Makeup Products" class="hero-image" />
-        <section id="products">
-            <h2>Featured Products</h2>
-            <div id="product-list" class="product-list">
-                <!-- Products will be dynamically loaded here -->
+    </section>
+
+    <div id="product-detail-modal" class="modal hidden">
+        <div class="modal-content">
+            <span id="close-modal" class="close">&times;</span>
+            <img id="detail-image" src="" alt="" />
+            <h3 id="detail-name"></h3>
+            <p id="detail-description"></p>
+            <p><strong>Price:</strong> $<span id="detail-price"></span></p>
+            <div class="modal-buttons">
+                <button id="detail-add-to-cart">Add to Cart</button>
+                <button id="detail-order-now">Order Now</button>
             </div>
-        </section>
-            <div id="product-detail-modal" class="modal hidden">
-                <div class="modal-content">
-                    <span id="close-modal" class="close">&times;</span>
-                    <img id="detail-image" src="" alt="" />
-                    <h3 id="detail-name"></h3>
-                    <p id="detail-description"></p>
-                    <p><strong>Price:</strong> $<span id="detail-price"></span></p>
-                    <div class="modal-buttons">
-                        <button id="detail-add-to-cart">Add to Cart</button>
-                        <button id="detail-order-now">Order Now</button>
+        </div>
+    </div>
+
+    <section class="product-video-section">
+        <div class="video-description">
+            <h2>Eyeconic Tutorial</h2>
+            <p>Watch our Eyeconic makeup tutorial to learn how to apply stunning eye looks with ease. Perfect for beginners and pros alike!</p>
+        </div>
+        <div class="video-container">
+            <video controls class="video-player">
+                <source src="video/Eyeconic.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </section>
+
+    <section class="model-gallery">
+        <h2>Model Gallery</h2>
+        <h2>Our Stunning Looks</h2>
+        <div class="model-cards">
+            <div class="model-card">
+                <img src="images/2023.jpeg" alt="Model 1">
+                <p>Natural Glow with subtle highlight and peach lips.</p>
+            </div>
+            <div class="model-card">
+                <img src="images/2024.jpeg" alt="Model 2">
+                <p>Bold Eyeconic look with shimmer eyeshadow and liner.</p>
+            </div>
+            <div class="model-card">
+                <img src="images/lipstick shed.jpeg" alt="Model 3">
+                <p>Soft Glam with rose blush and nude lipstick.</p>
+            </div>
+            <div class="model-card">
+                <img src="images/cherry lips.jpeg" alt="Model 4">
+                <p>Glamorous red cherry lips.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="subscribe-section">
+        <!-- Mailchimp Form -->
+        <div id="mc_embed_shell">
+            <div id="mc_embed_signup">
+                <form action="https://gmail.us17.list-manage.com/subscribe/post?u=dde1915e9d4d906cb8ee4873a&amp;id=c3e0e772aa&amp;f_id=001ec2e1f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+                    <div id="mc_embed_signup_scroll">
+                        <h2>Subscribe</h2>
+                        <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+                        <div class="mc-field-group">
+                            <label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label>
+                            <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value="">
+                        </div>
+                        <div id="mce-responses" class="clear foot">
+                            <div class="response" id="mce-error-response" style="display: none;"></div>
+                            <div class="response" id="mce-success-response" style="display: none;"></div>
+                        </div>
+                        <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                            <input type="text" name="b_dde1915e9d4d906cb8ee4873a_c3e0e772aa" tabindex="-1" value="">
+                        </div>
+                        <div class="optionalParent">
+                            <div class="clear foot">
+                                <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe">
+                                <p style="margin: 0px auto;"><a href="http://eepurl.com/jh0BH2" title="Mailchimp - email marketing made easy and fun"><span style="display: inline-block; background-color: transparent; border-radius: 4px;"><img class="refferal_badge" src="https://digitalasset.intuit.com/render/content/dam/intuit/mc-fe/en_us/images/intuit-mc-rewards-text-dark.svg" alt="Intuit Mailchimp" style="width: 220px; height: 40px; display: flex; padding: 2px 0px; justify-content: center; align-items: center;"></span></a></p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div id="mc_embed_shell">
-      <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
-  <style type="text/css">
-        
-</style>
-<div id="mc_embed_signup">
-    <form action="https://gmail.us17.list-manage.com/subscribe/post?u=dde1915e9d4d906cb8ee4873a&amp;id=c3e0e772aa&amp;f_id=001ec2e1f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
-        <div id="mc_embed_signup_scroll"><h2>Subscribe</h2>
-            <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
-            <div class="mc-field-group"><label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label><input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value=""></div>
-        <div id="mce-responses" class="clear foot">
-            <div class="response" id="mce-error-response" style="display: none;"></div>
-            <div class="response" id="mce-success-response" style="display: none;"></div>
-        </div>
-    <div aria-hidden="true" style="position: absolute; left: -5000px;">
-        /* real people should not fill this in and expect good things - do not remove this or risk form bot signups */
-        <input type="text" name="b_dde1915e9d4d906cb8ee4873a_c3e0e772aa" tabindex="-1" value="">
-    </div>
-        <div class="optionalParent">
-            <div class="clear foot">
-                <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe">
-                <p style="margin: 0px auto;"><a href="http://eepurl.com/jh0BH2" title="Mailchimp - email marketing made easy and fun"><span style="display: inline-block; background-color: transparent; border-radius: 4px;"><img class="refferal_badge" src="https://digitalasset.intuit.com/render/content/dam/intuit/mc-fe/en_us/images/intuit-mc-rewards-text-dark.svg" alt="Intuit Mailchimp" style="width: 220px; height: 40px; display: flex; padding: 2px 0px; justify-content: center; align-items: center;"></span></a></p>
+                </form>
             </div>
         </div>
+
+        <!-- Social Links -->
+        <div class="footer">
+            <p>Follow us on:</p>
+            <ul class="social-links">
+                <li><a href="https://www.facebook.com" target="_blank">Facebook</a></li>
+                <li><a href="https://www.instagram.com" target="_blank">Instagram</a></li>
+                <li><a href="https://www.twitter.com" target="_blank">Twitter</a></li>
+            </ul>
+        </div>
     </div>
-</form>
-</div>
-<script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script><script type="text/javascript">(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';fnames[6]='COMPANY';ftypes[6]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script></div>
 
+    <footer>
+        <p>&copy; 2025 Makeup-Ecommerce-Site. All rights reserved.</p>
+    </footer>
 
-        <footer>
-            <p>&copy; 2025 Makeup-Ecommerce-Site. All rights reserved.</p>
-        </footer>
-
-        <script src="src/index.js"></script>
-
-    
+    <script src="src/index.js"></script>
 </body>
 </html>

@@ -397,6 +397,145 @@ footer p {
   z-index: 999;
 }
 
+body.dark-mode {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+body.dark-mode a,
+body.dark-mode button {
+  color: #f06292;
+  background-color: #1e1e1e;
+}
+
+.product-video-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  margin-top: 2rem;
+}
+
+.video-description {
+  flex: 1;
+  min-width: 250px;
+}
+
+.video-description h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.video-description p {
+  font-size: 1rem;
+  color: #444;
+}
+
+.video-container {
+  flex: 1;
+  min-width: 300px;
+}
+
+.video-player {
+  max-width:480px ;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+
+}
+
+.model-gallery {
+  text-align: center;
+  padding: 2rem;
+  background-color: #fff;
+}
+
+.model-gallery h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #e91e63;
+}
+
+.model-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1;
+  margin-bottom: 2rem;
+}
+
+.model-card {
+  max-width: 220px;
+  background-color: #fefefe;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  text-align: center;
+  padding: 1rem;
+}
+
+.model-card img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  height: 220px;
+}
+
+.model-card p {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.testimonials {
+  padding: 2rem 1rem;
+  background-color: #fdfdfd;
+  text-align: center;
+}
+
+.testimonials h2 {
+  color: #e91e63;
+  margin-bottom: 1.5rem;
+  font-size: 1.6rem;
+}
+
+.testimonial-card {
+  max-width: 500px;
+  margin: 1rem auto;
+  padding: 1rem 1.5rem;
+  border-left: 4px solid #e91e63;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .product-video-section,
+  .model-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .model-card {
+    max-width: 90%;
+  }
+
+  .video-container {
+    max-width: 100%;
+  }
+
+  footer {
+    margin-top: 2rem;
+  }
+}
+
+
 
 
 
