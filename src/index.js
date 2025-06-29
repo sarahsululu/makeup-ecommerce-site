@@ -6,17 +6,22 @@ document.addEventListener('DOMContentLoaded', () => {
   const searchInput = document.getElementById('search-input');
   const searchButton = document.getElementById('search-button');
 
-  // Light mode is default — enable dark mode if saved
-  if (localStorage.getItem('dark-mode') === 'on') {
+  // Set initial dark mode state
+  const savedMode = localStorage.getItem('dark-mode');
+  if (savedMode === 'on') {
     body.classList.add('dark-mode');
+  } else {
+    body.classList.remove('dark-mode');
   }
 
+  // Toggle dark mode
   toggleBtn.addEventListener('click', () => {
     body.classList.toggle('dark-mode');
     const isDark = body.classList.contains('dark-mode');
     localStorage.setItem('dark-mode', isDark ? 'on' : 'off');
   });
 
+  // Cart management
   let cart = JSON.parse(localStorage.getItem('cart')) || [];
   updateCartCount();
 
@@ -70,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
       `;
 
-      // Event listeners for buttons
+      // Button events
       productItem.querySelector('.add-to-cart').addEventListener('click', (e) => {
         e.stopPropagation();
         addToCart(product);
@@ -81,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
         orderNow(product);
       });
 
-      // Click whole item to show modal
+      // Whole card opens modal
       productItem.addEventListener('click', () => {
         showProductDetails(product);
       });
@@ -99,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
       .then(products => {
         renderProducts(products);
 
-        // Optional: Add search functionality
+        // Search logic
         searchButton.addEventListener('click', () => {
           const query = searchInput.value.toLowerCase();
           const filtered = products.filter(product =>
@@ -111,13 +116,33 @@ document.addEventListener('DOMContentLoaded', () => {
       })
       .catch(error => {
         console.error("Error loading products:", error);
-        productList.innerHTML = "<p style='color: red;'>Failed to load products. Please start JSON Server.</p>";
+        productList.innerHTML = "<p style='color: red;'>Failed to load products. Is your JSON Server running?</p>";
       });
   }
 
-  // Load everything
   loadProducts();
 });
+
+document.getElementById('go-to-promos').addEventListener('click', () => {
+  document.getElementById('main-banner').classList.add('hidden');
+  document.getElementById('promo-section').classList.remove('hidden');
+});
+
+document.getElementById('back-to-main').addEventListener('click', () => {
+  document.getElementById('promo-section').classList.add('hidden');
+  document.getElementById('main-banner').classList.remove('hidden');
+});
+
+  const aboutLink = document.querySelector('a[href="#about"]');
+  const aboutSection = document.getElementById('about');
+
+  aboutLink.addEventListener('click', function (e) {
+    e.preventDefault();
+    aboutSection.style.display = aboutSection.style.display === 'none' ? 'block' : 'none';
+    aboutSection.scrollIntoView({ behavior: 'smooth' });
+  });
+
+
 
 
 
