@@ -69,6 +69,9 @@ document.addEventListener('DOMContentLoaded', () => {
         <h3>${product.name}</h3>
         <p>${product.description || ''}</p>
         <p>$${product.price.toFixed(2)}</p>
+        <div class="product-rating">
+         ${'★'.repeat(product.rating || 0)}${'☆'.repeat(5 - (product.rating || 0))}
+         </div>
         <div class="product-buttons">
           <button class="add-to-cart">Add to Cart</button>
           <button class="order-now">Order Now</button>
