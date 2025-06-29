@@ -1,4 +1,9 @@
 # makeup-ecommerce-site
+video recording link 
+https://screenapp.io/app/#/shared/ewEKDRMFKJ
+
+my live website link
+ https://sarahsululu.github.io/makeup-ecommerce-site
 
 Welcome to **Glow Up**, a personal makeup website where users can browse beauty products, read tips, contact the makeup artist, and more. This project is built using **HTML**, **CSS**, and **JavaScript**, with features powered by **Mailchimp** and **db.json** (JSON Server).
 
