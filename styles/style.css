@@ -662,4 +662,9 @@ body.dark-mode button {
   color: #c2185b;
 }
 
+.product-rating {
+  color: #ff69b4; 
+  font-size: 1.2rem;
+  margin: 5px 0;
+}
 
