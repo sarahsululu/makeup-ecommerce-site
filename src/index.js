@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function loadProducts() {
-    fetch("http://localhost:3000/products")
+    fetch("https://makeup-ecommerce-site.onrender.com/products")
       .then(response => {
         if (!response.ok) throw new Error("Failed to fetch products");
         return response.json();
